@@ -12,13 +12,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 group :assets do
-  gem 'sass-rails', '~> 5.0'
   gem 'coffee-rails', '~> 4.1.0'
   gem 'uglifier', '>= 1.0.3'
-  gem "therubyracer"
-  gem "less-rails"
-  gem "twitter-bootstrap-rails"
 end
+
+gem 'bootstrap-sass'
+gem 'sass-rails'
 
 group :test do
   gem 'factory_girl_rails'
@@ -30,4 +29,5 @@ end
 
 group :test, :development do
   gem 'byebug'
+  gem 'mailcatcher'
 end
