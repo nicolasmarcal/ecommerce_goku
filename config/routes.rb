@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     devise_for :users, controllers: {
         sessions: 'admin/sessions'
       }
-    resources :admin, only: [:index]
+    resources :addresses
   end
 end

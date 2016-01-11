@@ -7,5 +7,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
-      = yield
+    = render "layouts/admin/navbar"
+    .container-fluid
+      .row
+        %div{ class: "col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" }
+        = yield

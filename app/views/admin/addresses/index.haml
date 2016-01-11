@@ -1,0 +1,29 @@
+.panel.panel-default
+  .panel-heading
+    Código de Endereçamento Postal - CEP
+  .panel-body
+    = form_tag(admin_addresses_path, method: "get", class: "navbar-form navbar-left") do
+      .form-group
+        = text_field_tag "zip_code", params[:zip_code], class: "form-control", placeholder: "Buscar por CEP"
+        = submit_tag "Buscar", class: "btn btn-default"
+        = link_to "Adicionar", new_admin_address_path, role: "button", class: "btn btn-success btn-large"
+  %table.table
+    %thead
+      %tr
+        %th CEP
+        %th Estado
+        %th Cidade
+        %th Bairro
+        %th Rua
+        %th Ações
+    %tbody
+      - @addresses.each do |address|
+        %tr
+          %td= address.zip_code
+          %td= address.state
+          %td= address.city
+          %td= address.neighborhood
+          %td= address.street
+          %td
+            %button.btn.btn-link.btn-danger Excluir
+            %button.btn.btn-link.btn-success Editar
