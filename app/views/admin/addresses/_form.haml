@@ -20,4 +20,12 @@
         = f.text_field :street, class: "form-control input-large"
       = f.submit "Salvar", class: "btn btn-primary"
         
-  
+:javascript
+  $("#address_zip_code").blur(function(){
+    $.get("/admin/addresses/find_external_address?zip_code=" + $("#address_zip_code").val(), function(data){
+      $("#address_state").val(data["state"]);
+      $("#address_street").val(data["address"]);
+      $("#address_city").val(data["city"]);
+      $("#address_neighborhood").val(data["neighborhood"]);
+    });
+  });
