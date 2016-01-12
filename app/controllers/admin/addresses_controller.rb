@@ -1,7 +1,7 @@
 class Admin::AddressesController < Admin::AdminController
 
   def index
-    @addresses = Address.all
+    @addresses = InternalZipCodeSearcher.new(params_zip_code).get_address
   end
 
   def new
@@ -21,7 +21,26 @@ class Admin::AddressesController < Admin::AdminController
   end
 
   def destroy
-    
+    @address = Address.find(params[:id])
+    @address.destroy
+    flash[:notice] = "Excluído com sucesso"
+    redirect_to admin_addresses_path
+  end
+
+  def update
+    @address = Address.find(params[:id])
+
+    if @address.update_attributes(params_address)
+      flash[:notice] = "Atualizado com sucesso"
+      redirect_to admin_addresses_path
+    else
+      flash[:error] = @address.errors.full_messages
+      render action: :edit
+    end
+  end
+
+  def edit
+    @address = Address.find(params[:id])
   end
 
   def find_external_address

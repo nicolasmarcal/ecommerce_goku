@@ -25,5 +25,5 @@
           %td= address.neighborhood
           %td= address.street
           %td
-            %button.btn.btn-link.btn-danger Excluir
-            %button.btn.btn-link.btn-success Editar
+            = button_to 'Excluir', { action: :destroy, id: address.id }, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-link btn-danger"
+            %button.btn.btn-link.btn-success= link_to 'Editar', edit_admin_address_path(address)

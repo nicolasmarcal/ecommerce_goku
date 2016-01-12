@@ -21,14 +21,14 @@ gem 'bootstrap-sass'
 gem 'sass-rails'
 
 group :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'forgery'
   gem 'shoulda-matchers'
-  gem 'database_cleaner'
 end
 
 group :test, :development do
   gem 'byebug'
   gem 'mailcatcher'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'forgery'
+  gem 'database_cleaner'
 end
