@@ -1,28 +1,42 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.3.0
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
+* System dependencies:
+    - 'rails', '4.2.5'
+    - 'mysql2'
+    - 'haml-rails'
+    - 'jquery-rails'
+    - 'turbolinks'
+    - 'jbuilder', '~> 2.0'
+    - 'sdoc', '~> 0.4.0', group: :doc
+    - 'devise'
+    - 'correios-cep'
+    - 'coffee-rails', '~> 4.1.0'
+    - 'uglifier', '>= 1.0.3'
+    - 'bootstrap-sass'
+    - 'sass-rails'
+    - 'shoulda-matchers'
+    - 'byebug'
+    - 'mailcatcher'
+    - 'factory_girl_rails'
+    - 'rspec-rails'
+    - 'forgery'
+    - 'database_cleaner'
 
 * Configuration
+  - If you are using rvm, plase run `rvm install 2.3.0` and `rvm use 2.3.0`
+  - Run `bundle install`
 
 * Database creation
-
-* Database initialization
+  - Run  `rake db:setup`
 
 * How to run the test suite
+  - Run `rake db:test:prepare` and `rake`
 
-* Services (job queues, cache servers, search engines, etc.)
+== Resolução do Teste
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* H1: Cadastro de Endereços. Foi criado o CRUD dentro do namespace admin, que só pode ser acessado por usuários cadastrados. A engine de login é feita por meio da gem *Devise*.
+* H2: Há busca de endereços por CEP em dois lugares: no index do cadastro dos endereços e via API (para o caso de utilização por outras plataformas ou sistemas).
+* H3: O cadastro de usuários é feito por meio da gem *Devise*
+* H4: Página admin criada dentro de um namespace
