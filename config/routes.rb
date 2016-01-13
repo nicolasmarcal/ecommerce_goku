@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     devise_for :users, controllers: {
         sessions: 'admin/sessions'
       }
+    resources :users
     resources :addresses do
       collection do
         get :find_external_address

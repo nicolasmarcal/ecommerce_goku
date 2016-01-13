@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading
+    Usuários
+  .panel-body
+    = link_to "Adicionar", new_admin_user_path, role: "button", class: "btn btn-success btn-large"
+  %table.table
+    %thead
+      %tr
+        %th Nome
+        %th Email
+        %th Ações
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.email
+          %td
+            = button_to 'Excluir', { action: :destroy, id: user.id }, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-link btn-danger"
+            %button.btn.btn-link.btn-success= link_to 'Editar', edit_admin_user_path(user)

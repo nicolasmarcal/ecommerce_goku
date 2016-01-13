@@ -1,0 +1,18 @@
+.panel.panel-default
+  .panel-heading
+    Cadastro: Usuários
+  .panel-body
+    = form_for([:admin, @user]) do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control input-large"
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: "form-control input-large"
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: "form-control input-large"
+      .form-group
+        = f.label :password_confirm
+        = f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-large"
+      = f.submit "Salvar", class: "btn btn-primary"
