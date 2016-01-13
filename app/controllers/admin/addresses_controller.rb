@@ -15,7 +15,7 @@ class Admin::AddressesController < Admin::AdminController
       flash[:notice] = "Criado com sucesso"
       redirect_to admin_addresses_path
     else
-      flash[:error] = @addresses.errors.full_messages
+      flash[:error] = @address.errors.full_messages
       render action: :new
     end
   end

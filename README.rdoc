@@ -40,3 +40,8 @@
 * H2: Há busca de endereços por CEP em dois lugares: no index do cadastro dos endereços e via API (para o caso de utilização por outras plataformas ou sistemas).
 * H3: O cadastro de usuários é feito por meio da gem *Devise*
 * H4: Página admin criada dentro de um namespace
+
+== Acessar app
+* Entrar no console do rails e digitar: `User.create({"name"=>"Nícolas Marçal", "email"=>"admin@teste.com", "password" => "teste1234"})`
+* Digitar o comando `rails s` e na tela de login usar credenciais: *email:* admin@teste.com
+, *senha:* teste1234
